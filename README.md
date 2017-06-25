@@ -42,3 +42,18 @@ Hack:
 }
 ```
 
+### ion-range
+
+Issue: Too much whitespace between left label and range slider
+
+Cause: The two labels and the slider is are in eqaul sized flex boxes.
+
+Hack:
+
+```
+    ion-range{
+        .range-slider{
+            flex:10;
+        }
+    }
+```

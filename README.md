@@ -46,7 +46,7 @@ Hack:
 
 Issue: Too much whitespace between left label and range slider
 
-Cause: The two labels and the slider is are in eqaul sized flex boxes.
+Cause: The flex property is set to `initial` for the labels. The keyword is not supported by IE and reverts to flex: 1. This result in the two labels and the slider is are in eqaul sized flex boxes.
 
 Hack:
 

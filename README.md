@@ -10,3 +10,24 @@ Using Ionic to build is possible and if you stick to Chrome you will not have ma
 Many users especially if you're dealing with enterprise clients, need to run their apps in the currently most despised browser: Internet Explorer.
 
 This is a list of hacks that will make it possible.
+
+### ion-item
+Issue: ion-item collapses on IE. 
+
+Reason:
+
+Hack:
+
+.md {
+    ion-item{
+        min-height: 8rem;
+    }
+}
+
+### ion-datetime
+
+Issue: Day and month list collapses into one
+
+Reason:
+
+Hack

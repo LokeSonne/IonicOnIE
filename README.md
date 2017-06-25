@@ -14,7 +14,7 @@ This is a list of hacks that will make it possible.
 ### ion-item
 Issue: ion-item collapses on IE. 
 
-Reason:
+Cause:
 
 Hack:
 
@@ -30,6 +30,15 @@ Hack:
 
 Issue: Day and month list collapses into one
 
-Reason:
+Cause:
 
-Hack
+Hack:
+
+```
+.md {
+    .picker-col{
+        max-width: 20rem !important;
+    }
+}
+```
+

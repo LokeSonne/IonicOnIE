@@ -24,7 +24,7 @@ Hack:
         min-height: 8rem;
     }
 }
-
+```
 
 ### ion-datetime
 

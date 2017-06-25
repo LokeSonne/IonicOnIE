@@ -18,12 +18,13 @@ Reason:
 
 Hack:
 
-
+```
 .md {
     ion-item{
         min-height: 8rem;
     }
 }
+
 
 ### ion-datetime
 

@@ -5,12 +5,26 @@ Hacks to make Ionic run on Internet Explorer 11
 
 Ionic is a html5 framework to create mobile apps for iOS, Android and Windows Universal Apps. It does not support IE.
 
-Using Ionic to build is possible and if you stick to Chrome you will not have many technical problems. Beware of mobile-centric UI though.
+Using Ionic to build web apps is possible and if you stick to Chrome you will not have many technical problems. Beware of mobile-centric UI though.
 
 If your users need to run their apps in the currently most despised browser,  Internet Explorer, here is a list of hacks that will make it possible.
 
 The list is not in anyway complete. Feel free to add to it.
 
+If you cannot get a component to work with IE, all is not lost. Just use another component and wrap you elements in your templates in
+```
+<!--[if IE]>
+<div> Only displayed only in IE .</div>
+<![endif]-->
+```
+for elements/components only displayed in IE, and
+
+```
+<!--[if !IE]>
+<div> Not displayed in IE .</div>
+<![endif]-->
+```
+for other browsers.
 
 ##CSS3 an IE
 So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.

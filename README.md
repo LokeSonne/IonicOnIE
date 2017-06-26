@@ -30,7 +30,7 @@ for other browsers.
 
 So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
 
-I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues, I've decided to go the tedious way and hack my way through it, one unaligned element at a time.
+I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin, perhaps [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues, I've decided to go the tedious way and hack my way through it, one unaligned element at a time.
 
 
 ### ion-item

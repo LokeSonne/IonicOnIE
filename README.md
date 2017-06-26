@@ -26,7 +26,7 @@ for elements/components only displayed in IE, and
 ```
 for other browsers.
 
-##CSS3 an IE
+## CSS3 an IE
 
 So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
 

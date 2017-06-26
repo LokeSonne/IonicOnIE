@@ -11,21 +11,6 @@ If your users need to run their apps in the currently most despised browser,  In
 
 The list is not in anyway complete. Feel free to add to it.
 
-If you cannot get a component to work with IE, all is not lost. Just use another component and wrap you elements in your templates in
-```
-<!--[if IE]>
-<div> Only displayed only in IE .</div>
-<![endif]-->
-```
-for elements/components only displayed in IE, and
-
-```
-<!--[if !IE]>
-<div> Not displayed in IE .</div>
-<![endif]-->
-```
-for other browsers.
-
 ## CSS3 and IE
 
 So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.

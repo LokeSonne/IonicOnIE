@@ -3,9 +3,9 @@ Hacks to make Ionic run on Internet Explorer 11
 
 ## Why run Ionic in IE?
 
-Ionic is a html5 framework to create mobile apps for iOS, Android and Windows Universal Apps. It does not support IE.
+Ionic is a html5 framework for creating mobile apps for iOS, Android and Windows Universal Apps. It does not support IE.
 
-Using Ionic to build web apps is possible and if you stick to Chrome you will not have many technical problems. Beware of mobile-centric UI though.
+Using Ionic to build desktop web apps is possible, and if you stick to Chrome you will not have many issues. Beware of mobile-centric componets though.
 
 If your users need to run their apps in the currently most despised browser,  Internet Explorer, here is a list of hacks that will make it possible.
 

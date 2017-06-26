@@ -60,9 +60,10 @@ Cause: The flex property is set to `initial` for the labels. The keyword is not 
 Hack:
 
 ```
-    ion-range{
-        .range-slider{
-            flex:10;
-        }
-    }
+{
+ion-range{
+    .range-slider{
+        flex:10;
+    }
+}
 ```

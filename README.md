@@ -7,9 +7,16 @@ Ionic is a html5 framework to create mobile apps for iOS, Android and Windows Un
 
 Using Ionic to build is possible and if you stick to Chrome you will not have many technical problems. Beware of mobile-centric UI though.
 
-Many users especially if you're dealing with enterprise clients, need to run their apps in the currently most despised browser: Internet Explorer.
+If your users need to run their apps in the currently most despised browser,  Internet Explorer, here is a list of hacks that will make it possible.
 
-This is a list of hacks that will make it possible.
+The list is not in anyway complete. Feel free to add to it.
+
+
+##CSS3 an IE
+So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
+
+I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues, I've decided to go the tedious way and hack my way through it, one unaligned element at a time.
+
 
 ### ion-item
 Issue: ion-item collapses on IE. 
@@ -27,6 +34,8 @@ Hack:
 ```
 
 ### ion-datetime
+
+Warning! Do not attempt to use the ion-datetime component for desktop. It is very much intended for touch based devices. It probably _can_ be made to work on IE, but your users will understandibly hate you.
 
 Issue: Day and month list collapses into one
 

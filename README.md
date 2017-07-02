@@ -100,23 +100,12 @@ Cause: I'll let Anseki explain it, author of the polyfill https://github.com/ans
 >That Data URI scheme is written in for example, background-image, list-style-image, cursor CSS properties, src, data attributes of `<img>`, `<input>`, `<iframe>`, `<object>` elements, etc..
 >
 ```
->div {
->  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><path d="M10,10L32,90L90,32z" fill="lightgreen"/></svg>') center no-repeat;
->}
-```
-
-
-But IE ignores it, and some browsers consider # as the hash.
-
-
-
-Hack:
-
-```
-{
-ion-range{
-    .range-slider{
-        flex:10;
-    }
+div {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><path d="M10,10L32,90L90,32z" fill="lightgreen"/></svg>') center no-repeat;
 }
 ```
+>But IE ignores it, and some browsers consider # as the hash.
+
+Hack: Install this polyfill https://github.com/anseki/polyfill-svg-uri (`npm install --save polyfill-svg-uri`) and import it to your ./mypolyfill.ts `import 'polyfill-svg-uri/polyfill-svg-uri';` 
+
+

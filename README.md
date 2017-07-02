@@ -15,7 +15,27 @@ The list is not in anyway complete. Feel free to add to it.
 
 So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
 
-I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin, perhaps [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues I've decided to go the tedious way and hack my way through it, one unaligned element at a time.
+~~I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin, perhaps [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues I've decided to go the tedious way and hack my way through it, one unaligned element at a time.~~
+
+A lot can be fixed with polyfills. Ionic already includes a number of polyfills but more can easily be added.
+
+In your `/src/app` folder add a file called `mypolyfills.ts`. Here you import all the needed polyfills.
+
+Example of mypolyfills.ts:
+
+```
+import 'polyfill-svg-uri/polyfill-svg-uri';
+```
+
+Now, import this in your `main.ts` and you're good to go. Like so:
+
+```
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+import './mypolyfills';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
 
 
 ### ion-item

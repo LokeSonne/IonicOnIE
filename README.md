@@ -96,7 +96,7 @@ Issue: Icons are not displayed
 Cause: I'll let Anseki explain it, author of the polyfill https://github.com/anseki/polyfill-svg-uri
 
 >The plain SVG without encoding (e.g. Base64, URL encoding, etc.) that is written in the Data URI scheme is easy to read, easy to edit and small size.
->
+
 >That Data URI scheme is written in for example, background-image, list-style-image, cursor CSS properties, src, data attributes of <img>, <input>, <iframe>, <object> elements, etc..
 
 div {

@@ -103,8 +103,8 @@ div {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><path d="M10,10L32,90L90,32z" fill="lightgreen"/></svg>') center no-repeat;
 }
 ```
-But IE ignores it, and some browsers consider # as the hash.
-<
+>But IE ignores it, and some browsers consider # as the hash.
+
 
 Hack:
 

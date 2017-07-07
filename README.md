@@ -1,5 +1,5 @@
 # IonicOnIE
-Hacks to make Ionic run on Internet Explorer 11
+Hacks to make Ionic 2+ run on Internet Explorer 11
 
 1. [Why run Ionic in IE?](#why-run-ionic-in-ie)
 2. [CSS3 and IE](#css3-and-ie)

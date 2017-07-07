@@ -1,15 +1,15 @@
 # IonicOnIE
 Hacks to make Ionic run on Internet Explorer 11
 
-1.[Why run Ionic in IE?](#why-run-ionic-in-ie)
-2.[CSS3 and IE](#css3-and-ie)
-3.[Postcss](#postcss)
-4.[Polyfills](#Polyfills)
-5.[How to limit CSS fixes to IE11 only](#how-to-limit-css-fixes-to-ie11-only)
-6.[ion-item](#ion-item)
-7.[ion-datetime](#ion-datetime)
-6.[icons](#icons)
-6.[ion-title](#ion-title)
+1. [Why run Ionic in IE?](#why-run-ionic-in-ie)
+2. [CSS3 and IE](#css3-and-ie)
+3. [Postcss](#postcss)
+4. [Polyfills](#Polyfills)
+5. [How to limit CSS fixes to IE11 only](#how-to-limit-css-fixes-to-ie11-only)
+6. [ion-item](#ion-item)
+7. [ion-datetime](#ion-datetime)
+8. [icons](#icons)
+9. [ion-title](#ion-title)
 
 
 ## Why run Ionic in IE?

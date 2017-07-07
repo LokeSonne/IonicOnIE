@@ -173,6 +173,52 @@ gulp.task('svgfix', function () {
 gulp.task('ionic:build:after', ['svgfix']);
 ```
 
+### ion-title
 
+Issue: Title text is not vertically centered
 
+Cause: Nested flexbox elements fail to register the height of their parent element in IE
 
+Hack: 
+
+1. Add `min-height` property to .title .title-md
+
+2. Wrap ion-title in a container. That is, add the following css to your app.scss
+
+```
+.FlexContainerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.FlexContainer {
+  align-items: flex-start;
+  //background: hsla(0,0%,0%,.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  min-height: 50px;
+  min-width: 0;
+}
+
+.FlexItem {
+  //background: hsla(0,0%,0%,.1);
+  box-sizing: border-box; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0 1em;
+}
+```
+
+And wrap any ion-title like so:
+
+```
+<div class="FlexContainerWrapper">
+  <div class="FlexContainer">
+    <ion-title>
+      Åbne ordrer
+    </ion-title>
+  </div>
+</div>
+```

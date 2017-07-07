@@ -13,11 +13,45 @@ The list is not in anyway complete. Feel free to add to it.
 
 ## CSS3 and IE
 
-So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like inherit, unset and intial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
+So, a lot of features of CSS3 are not supported in Internet Explorer 11. Keywords like unset and initial will be ignored. That might cause trouble for your Ionic app, since it relies heavily on that.
 
-~~I have yet to find a magic solution for this. using [Postcss](http://postcss.org) with some plugin, perhaps [oldie](https://github.com/jonathantneal/oldie) might do the trick, but I haven't made it work. So for CSS3 issues I've decided to go the tedious way and hack my way through it, one unaligned element at a time.~~
+Ionic also uses flexbox extensively. Flexbox is supported by IE11 but the implementation is buggy.
 
-A lot can be fixed with polyfills. Ionic already includes a number of polyfills but more can easily be added.
+
+## PostCSS
+
+[Postcss](https://github.com/postcss/postcss) lets you postprocess your css using a builder like Webpack or Gulp. PostCSS doesn't do much on its own but it lets you use a lot of plugins that solves specific CSS problems.
+
+I have chosen to use Gulp because Ionic has a plugin for that. This lets you use hooks for Ionic-cli commands, e.g. `ionic cordova build` that will run any Gulp task with `ionic:build:after` after the build has completed. Unfortunately there doesn't seem to be a way to use it together with the watcher (`ionic serve`). The hook `ionic:watcher:before` runs the task before the build has started. It can therefore not be used to process the generated main.css in the build folder.
+
+To use PostCSS with Gulp:
+
+`npm install @ionic/cli-plugin-gulp --save-dev`
+
+You should now see `gulpfile.js` in the root of your project. In this file add the following:
+
+```
+var postcss = require('gulp-postcss');
+var gulp = require('gulp');
+
+gulp.task('svgfix', function () {
+    var postcss = require('gulp-postcss');
+    var processors = [
+    ];
+    console.log('Gulp finished!')
+
+    return gulp.src('./www/build/*.css')
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./www/build/'));
+});
+
+gulp.task('ionic:build:after', ['svgfix']);
+```
+## Polyfills
+
+Some issues can be fixed with polyfills. Ionic already includes a number of polyfills but more can easily be added.
+
+**Beware** Using automated fixes like polyfills and PostCSS can lead to other components not rendering properly.
 
 In your `/src/app` folder add a file called `mypolyfills.ts`. Here you import all the needed polyfills.
 
@@ -36,6 +70,8 @@ import './mypolyfills';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
+
+## Limiting CSS fixes to IE11 only
 
 
 ### ion-item

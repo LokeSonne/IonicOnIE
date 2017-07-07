@@ -211,13 +211,13 @@ Hack:
 }
 ```
 
-And wrap any ion-title like so:
+And wrap any ion-title element like so:
 
 ```
 <div class="FlexContainerWrapper">
   <div class="FlexContainer">
     <ion-title>
-      Åbne ordrer
+       Centered Title Text
     </ion-title>
   </div>
 </div>

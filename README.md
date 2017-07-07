@@ -82,7 +82,7 @@ import './mypolyfills';
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-## Limiting CSS fixes to IE11 only
+## How to limit CSS fixes to IE11 only
 
 
 ### ion-item

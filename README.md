@@ -34,7 +34,7 @@ You should now see `gulpfile.js` in the root of your project. In this file add t
 var postcss = require('gulp-postcss');
 var gulp = require('gulp');
 
-gulp.task('svgfix', function () {
+gulp.task('somefix', function () {
     var postcss = require('gulp-postcss');
     var processors = [
     ];
@@ -45,7 +45,7 @@ gulp.task('svgfix', function () {
         .pipe(gulp.dest('./www/build/'));
 });
 
-gulp.task('ionic:build:after', ['svgfix']);
+gulp.task('ionic:build:after', ['somefix']);
 ```
 ## Polyfills
 
@@ -124,10 +124,9 @@ ion-range{
 }
 ```
 
+### icons
 
-### ion-searchbar
-
-Issue: Icons are not displayed
+Issue: Icons are not displayed in IE11
 
 Cause: I'll let Anseki explain it, author of the polyfill https://github.com/anseki/polyfill-svg-uri
 
@@ -142,6 +141,38 @@ div {
 ```
 >But IE ignores it, and some browsers consider # as the hash.
 
-Hack: Install this polyfill https://github.com/anseki/polyfill-svg-uri (`npm install --save polyfill-svg-uri`) and import it to your ./mypolyfill.ts `import 'polyfill-svg-uri/polyfill-svg-uri';` 
+Basically, IE follows the standards strictly. double quotes, hashses and arrows will therefore cause problems and the icons aren't displayed.
+
+Hack: You *can* use this polyfill https://github.com/anseki/polyfill-svg-uri (`npm install --save polyfill-svg-uri`) and import it to your ./mypolyfill.ts `import 'polyfill-svg-uri/polyfill-svg-uri';`. **But** it can cause other problems in Chrome.
+
+A better solution is to use the [svgo](https://github.com/ben-eb/postcss-svgo) plugin.
+
+Run
+
+`npm install postcss-svgo --save-dev`
+
+and add svgo plugin to your `gulpfile.js`
+
+```
+var postcss = require('gulp-postcss');
+var gulp = require('gulp');
+var svgo = require('postcss-svgo');
+
+gulp.task('svgfix', function () {
+    var postcss = require('gulp-postcss');
+    var processors = [
+    svgo({encode: true})
+    ];
+    console.log('Gulp finished!')
+
+    return gulp.src('./www/build/*.css')
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./www/build/'));
+});
+
+gulp.task('ionic:build:after', ['svgfix']);
+```
+
+
 
 

@@ -241,10 +241,8 @@ Issue: Input textarea is too narrow
 
 Cause: The `height` property is set to `auto` which results in a too low value.
 
-Hack:
+Hack: In your `variable.scss` set the following property:
 
 ```
-.searchbar-md .searchbar-input {
-    height: 4rem;
-}
+$searchbar-md-input-height: 4rem;
 ```

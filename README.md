@@ -10,6 +10,7 @@ Hacks to make Ionic 2+ run on Internet Explorer 11
 7. [ion-datetime](#ion-datetime)
 8. [icons](#icons)
 9. [ion-title](#ion-title)
+10. [ion-searchbar](#ion-searchbar)
 
 
 ## Why run Ionic in IE?
@@ -232,4 +233,18 @@ And wrap any ion-title element like so:
     </ion-title>
   </div>
 </div>
+```
+
+### ion-searchbar
+
+Issue: Input textarea is too narrow
+
+Cause: The `height` property is set to `auto` which results in a too low value.
+
+Hack:
+
+```
+.searchbar-md .searchbar-input {
+    height: 4rem;
+}
 ```
